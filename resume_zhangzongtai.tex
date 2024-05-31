@@ -1,0 +1,79 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{张宗泰}
+
+\basicInfo{
+  \email{zzt.nbl@hotmail.com} \textperiodcentered\ 
+  \phone{(+86) 139-1860-2041} \textperiodcentered\ 
+  \github[firestige]{https://github.com/firestige}}
+
+\section{\faBriefcase\ 项目经历}
+
+\datedsubsection{\textbf{GB28181协议联网网关·华为}}{2020年12月 -- 2024年6月}
+\role{java, Linux}{MDE(模块设计)}
+\begin{onehalfspacing}
+作为组内MDE负责质量看护，核心功能设计和开发工作。组织代码评审，技术沙龙，配合主管完成技术梯队构建。
+\begin{itemize}
+  \item 主导完成常驻内存消减挑战，实现满规格下老年代占用缩减50\%，提升系统吞吐量20\%的目标，获得产品线十佳QCC改进荣誉。
+  \item 利用Reactor模型改造消息收发模块，并且优化线程调度机制后，线程使用减少60\%，业务接口响应延迟降低40\%，获得产品线十佳微重构荣誉并在内部作为优秀案例推广。
+  \item 配合主管完成模块质量爬坡工作，在组内推行开发者测试理念，完成单元测试废弃、迁移、新增用例约2000条。同时为测试团队开发压力测试工具，作为领域专家帮助测试人员设计压力测试场景9个。最终达成攻坚目标，获得亮剑奖荣誉。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{机数大材库·机数}}{2018 年3月 -- 2020年11月}
+\role{Java, TS}{核心开发者}
+\begin{onehalfspacing}
+作为核心开发者负责数据挖掘模块与B/S应用设计和开发。
+\begin{itemize}
+  \item 利用朴素贝叶斯分类器、隐式马尔科夫模型分析全球化学专利文档，挖掘其中的化学反应方程式，为大材库凑齐初始的100万个有机化学反应方程。
+  \item 基于Redis搭建化学命名同义词字典库，加速文档分析，缩短分析时间约20\%。并利用flink搭建微批处理流水线，实现化学文档抓取，分析加工，落库自动化流程。
+\end{itemize}
+\end{onehalfspacing}
+
+\section{\faUsers\ 工作经历}
+\datedsubsection{\textbf{华为} 杭州}{2022年5月 -- 至今}
+\role{JAVA开发工程师}{职级：15}
+
+\datedsubsection{\textbf{德科·华为OD} 杭州}{2020年12月 -- 2022年5月}
+\role{JAVA开发工程师}{职级：D3}
+
+\datedsubsection{\textbf{合肥机数量子科技有限公司} 合肥}{2018年2月 -- 2020年11月}
+\role{JAVA开发工程师}{}
+
+\datedsubsection{\textbf{南京普迪科技实业有限公司} 南京}{2013年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+
+\section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 语言运用：Java > python = TypeScript > Go
+  \item 熟悉各类设计模式，需求分析方法，对spring、netty和Reactor源码有深入分析，有多个重构案例。
+  \item 对CPU缓存机制和JVM有较深入了解，熟悉各种常用算法。
+\end{itemize}
+
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{北京化工大学}, 北京}{2007 -- 2012}
+\textit{学士}\ 应用化学
+
+% \section{\faInfo\ 其他}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.5ex]
+%   \item 技术博客: http://blog.yours.me
+%   \item GitHub: https://github.com/username
+%   \item 语言: 英语 - 熟练(TOEFL xxx)
+% \end{itemize}
+
+\end{document}
