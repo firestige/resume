@@ -1,0 +1,93 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{张宗泰}
+
+\basicInfo{
+  \email{zzt.nbl@hotmail.com} \textperiodcentered\ 
+  \phone{(+86) 139-1860-2041} \textperiodcentered\ 
+  \github[firestige]{https://github.com/firestige}}
+
+\section{\faBriefcase\ 项目经历}
+
+\datedsubsection{\textbf{协议网关开发·华为}}{2020.12 -- 2024.8}
+\role{Java, Linux}{MDE(模块设计工程师)}
+\begin{onehalfspacing}
+作为组内MDE负责质量看护，核心功能设计和开发工作。组织代码评审，技术沙龙，配合主管完成技术梯队构建。
+\begin{itemize}
+  \item \textbf{主导完成常驻内存消减挑战}，借鉴JEP 254的设计优化编码存储方式，并利用弱引用设计编码复用和缓存机制，最终达成满规格下\textbf{老年代占用缩减50\%}，\textbf{提升系统吞吐量20\%}的目标，获得产品线十佳QCC改进荣誉。
+  \item \textbf{利用Reactor模型改造Sip协议收发模块}，并且优化线程调度机制后\textbf{线程占用减少60\%}，业务接口\textbf{响应延迟降低40\%}，获得产品线十佳微重构荣誉并在内部作为优秀案例推广。
+  \item \textbf{发起产品全链路日志追踪和分析改进项目。}采用FileBeat、Logstash和ElasticSearch完成日志收集、存储和检索，同时配合Grafana快速实现监控大屏功能。改造过程中负责工具链的搭建和维护，FileBeat开发和答疑，Logstash中日志清洗规则书写的培训工作。项目在测试集群运行良好，单点问题定位提升效率10\%，填补以往多模块问题追踪和定界依赖手动埋点追踪缺乏工具的空白，提升沟通定位效率40\%。
+  \item 配合主管完成模块质量爬坡工作，在组内推行开发者测试理念，完成单元测试废弃、迁移、新增用例约2000条。\textbf{利用K6为测试团队开发定制的Sip负载测试工具}，解决常见WEB压测工具不适配视频监控场景GB28181协议，社区没有支持GB28181协议的开源插件支持，长期以来团队缺乏场景化压测能力的痛点，作为领域专家帮助测试人员设计压力测试场景9个。最终达成攻坚目标，获得产品线亮剑奖荣誉。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{机数大材库·机数}}{2018 年3月 -- 2020年11月}
+\role{Java, TS}{核心开发者}
+\begin{onehalfspacing}
+作为核心开发者负责数据挖掘模块与B/S应用设计和开发。
+\begin{itemize}
+  \item 利用朴素贝叶斯分类器、隐式马尔科夫模型分析全球化学专利文档，挖掘其中的化学反应方程式。单次可处理最大3000字文档，为大材库凑齐初始的100万个有机化学反应方程。
+  \item 基于Redis搭建化学命名同义词字典库，加速文档分析，缩短分析时间约20\%。
+  \item 利用Scrapy和Redis实现爬虫多实例部署，同时使用Flink搭建微批处理流水线运行前述NLP程序处理采集的专利数据，最终实时输出结果到ElasticSearch。实现化学文档抓取，分析加工，落库自动化流程，达成大财库凑齐1000万化学反应方程数据的年度目标。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{复杂难容物质溶解工艺改进·南京普迪科技实业有限公司}}{2013 年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+\begin{onehalfspacing}
+针对复杂难容物质溶解问题开发新的生产工艺
+\begin{itemize}
+  \item 利用咪唑啉类有机小分子配合阴离子表面活性剂改进化学清洗缓蚀剂，对碳钢的氢离子缓蚀效果提升2\%，投药成本降低10\%。
+  \item 设计新施工工艺，加入水样自动监控和给药能力，引入新的密封和管路连接技术，减少综合施工人力成本50\%。
+\end{itemize}
+\end{onehalfspacing}
+
+\section{\faUsers\ 工作经历}
+\datedsubsection{\textbf{华为} 杭州}{2022年5月 -- 至今}
+\role{JAVA开发工程师}{职级：15}
+
+\datedsubsection{\textbf{德科·华为OD} 杭州}{2020年12月 -- 2022年5月}
+\role{JAVA开发工程师}{职级：D3}
+
+\datedsubsection{\textbf{合肥机数量子科技有限公司} 合肥}{2018年2月 -- 2020年11月}
+\role{JAVA开发工程师}{}
+
+\datedsubsection{\textbf{南京普迪科技实业有限公司} 南京}{2013年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+
+\section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 语言运用：Java > python = TypeScript > Go > shell
+  \item 熟悉各类设计模式，需求分析方法，对spring、netty和Reactor源码有深入分析，有多个重构案例。
+  \item 对CPU缓存机制和JVM有较深入了解，熟练使用JProfile、FlightRecorder等跟踪定位疑难问题，对系统的可观测性有一定见解。
+  \item 熟悉各种常用算法并能落地在日常工作中，包括且不限于利用前缀树优化国标编码路径存储，并查集解决多目录树连通性检查等问题。
+  \item 熟悉TCP/IP、HTTP、SIP等协议，有较为丰富的网络编程经验，实际工作中深入研究过netty以及reactor-netty响应式库源码，有基于netty和go手写sip客户端与服务端的经历。
+\end{itemize}
+
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{北京化工大学}, 北京}{2007 -- 2012}
+\textit{学士}\ 应用化学
+
+% \section{\faInfo\ 其他}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.5ex]
+%   \item 技术博客: http://blog.yours.me
+%   \item GitHub: https://github.com/username
+%   \item 语言: 英语 - 熟练(TOEFL xxx)
+% \end{itemize}
+
+\end{document}
