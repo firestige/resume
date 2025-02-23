@@ -1,0 +1,114 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{张宗泰}
+
+\basicInfo{
+  \email{zzt.nbl@hotmail.com} \textperiodcentered\ 
+  \phone{(+86) 139-1860-2041} \textperiodcentered\ 
+  \github[firestige]{https://github.com/firestige}}
+
+\section{\faBriefcase\ 项目经历}
+
+\datedsubsection{\textbf{OceanStor Pacific 分布式存储系统·华为}}{2024.5至今}
+\role {Java, Linux}{系统架构工程师，解决方案设计}
+作为产品和方案设计人员，负责产品需求分析，架构和解决方案设计，评审工作。参与24B版本设计，输出多份设计文档。主要成果有：
+\begin{onehalfspacing}
+  \begin{itemize}
+    \item 负责系统架构看护。参与公司软件数字资产变革任务，推动团队接纳\textbf{4+1视图架构管控方案}。历时半年，组织培训12次，完成100万行代码的梳理和排查，最终输出UML架构设计文件超6000件，培养具备架构设计能力的开发骨干7名。
+    \item 负责解决方案搭建和需求分析。参与24B版本设计，深耕教育科研HPDA存储市场，搭建试验数据分级存储备份联合方案，推动产品提升对象存储性能需求落地，构建基于对象存储的试验数据生命周期管理，自动冷热分级，关键数据自动迁移长期备份的整体解决方案，完成其中的多AZ高可用，高可靠方案设计并输出设计文档。
+  \end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{分布式视频存储系统·华为}}{2020.12 -- 2024.8}
+\role{Java, Linux}{模块设计, Commiter}
+\begin{onehalfspacing}
+作为团队MDE负责协议网关和智能分析底座两个核心组件质量看护，核心功能设计和开发工作。组织代码评审，技术沙龙，配合项目主管完成技术梯队构建。擅长处理性能调优，接口安全防护等问题。
+\begin{itemize}
+  \item \textbf{主导完成常驻内存消减挑战}。在疑难问题攻关时发现高负载下DUMP中出现大量重复字符串实例，占用大量内存加速GC触发频率，间接导致产品吞吐量降低的问题。事后发起成常驻内存消减挑战，针对业务特点，重新设计编码存储方式，并利用弱引用特性实现具备自动回收能力的编码缓存机制，最终达成满规格下\textbf{老年代占用缩减50\%}，\textbf{提升系统吞吐量20\%}的目标，获得产品线十佳QCC改进荣誉。
+  \item \textbf{主导协议网关性能升改进}。原系统基于BIO模型处理网络消息，在满负载情况下，因为上下游服务处理能力波动，容易导致消息积压并扩散为网关中断服务重启。经分析决定采用NIO，以事件驱动的方式作为消息处理的核心，业务处理逻辑通过责任链模式以filter chain的形式织入，从而保证业务逻辑的可拓展性。整个改造通过门面模式和Spring-boot的factories机制实现分层和自动装配，从而达到调用侧无感的效果。最终实现\textbf{线程占用减少60\%}，业务接口\textbf{响应延迟降低40\%}，获得产品线十佳微重构荣誉并在内部作为优秀案例推广。
+  \item \textbf{推动多级流控改造落地，提升系统可用性和安全性}。智能分析业务和协议网关因为对接第三方平台，容易受到来自第三方的非法请求攻击。在协议网关完成改造后，基于Redis构建分布式令牌桶实现限流，限流逻辑作为filter插入网关的filter chain中，为了应对Redis不可用的情况，同时设计分片+本地令牌桶的二级备用机制。限流规则通过配置中心分发，基于解释器模式，支持热加载，优化部署体验。上线后获得一线和二线服务支持同事广泛好评。
+  \item 配合主管完成模块质量爬坡工作，在组内推行开发者测试理念，完成单元测试废弃、迁移、新增用例约2000条。\textbf{利用K6为测试团队开发定制的Sip负载测试工具}，解决常见WEB压测工具不适配视频监控场景GB28181协议，社区没有支持GB28181协议的开源插件支持，长期以来团队缺乏场景化压测能力的痛点，作为领域专家帮助测试人员设计压力测试场景9个。最终达成攻坚目标，获得产品线亮剑奖荣誉。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{化学实验室信息管理系统·机数}}{2018 年3月 -- 2020年11月}
+\role{Java, TS}{核心开发者}
+\begin{onehalfspacing}
+作为核心开发者负责试验数据存储、检索与前端B/S应用设计和开发，相关产品用于中科大精准智能实验室、中科大化学院等科研单位。
+\begin{itemize}
+  \item 基于spring cloud alibaba搭建后端云服务，通过组件微服务化的手段分离鉴权认证、试验数据处理、资产管理、数据查询等功能模块的动态增减。
+  \item 搭建ElasticSearch集群实现试验报告和论文全文检索功能，并通过MinIO提供对象存储实现电镜照片等非结构化数据存储。
+  \item 基于ketcher.js、three.js、D3.js自主开发分子式绘制、3D模型演示和化学实验数据可视化功能。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{机数大材库·机数}}{2018 年3月 -- 2020年11月}
+\role{Java, TS}{核心开发者}
+\begin{onehalfspacing}
+作为核心开发者负责数据挖掘模块与B/S应用设计和开发。大材库是我国最早一批商用化学信息学数据库，客户包含中科大、南京大学等高等学府。
+\begin{itemize}
+  \item 利用朴素贝叶斯分类器、隐式马尔科夫模型分析全球化学专利文档，挖掘其中的化学反应方程式。单次可处理最大3000字文档，为大材库凑齐初始的100万个有机化学反应方程。
+  \item 基于Redis搭建化学命名同义词字典库，加速文档分析，缩短分析时间约20\%。
+  \item 利用Scrapy和Redis实现爬虫多实例部署，同时使用Flink搭建微批处理流水线运行前述NLP程序处理采集的专利数据，最终实时输出结果到ElasticSearch。实现化学文档抓取，分析加工，落库自动化流程，达成大财库凑齐1000万化学反应方程数据的年度目标。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{复杂难容物质溶解工艺改进·南京普迪科技实业有限公司}}{2013 年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+\begin{onehalfspacing}
+针对复杂难容物质溶解问题开发新的生产工艺
+\begin{itemize}
+  \item 利用咪唑啉类有机小分子配合阴离子表面活性剂改进化学清洗缓蚀剂，对碳钢的氢离子缓蚀效果提升2\%，投药成本降低10\%。
+  \item 设计新施工工艺，加入水样自动监控和给药能力，引入新的密封和管路连接技术，减少综合施工人力成本50\%。
+\end{itemize}
+\end{onehalfspacing}
+
+\section{\faUsers\ 工作经历}
+\datedsubsection{\textbf{华为} 杭州}{2022年5月 -- 至今}
+\role{JAVA开发工程师}{职级：15}
+
+\datedsubsection{\textbf{德科·华为OD} 杭州}{2020年12月 -- 2022年5月}
+\role{JAVA开发工程师}{职级：D3}
+
+\datedsubsection{\textbf{合肥机数量子科技有限公司} 合肥}{2018年2月 -- 2020年11月}
+\role{JAVA开发工程师}{}
+
+\datedsubsection{\textbf{南京普迪科技实业有限公司} 南京}{2013年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+
+\section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 语言运用：Java > python = TypeScript > Go > shell
+  \item 熟悉各类设计模式，需求分析方法，对spring、netty和Reactor源码有深入分析，有多个重构案例。
+  \item 对CPU缓存机制和JVM有较深入了解，熟练使用JProfile、FlightRecorder等跟踪定位疑难问题，对系统的可观测性有一定见解。
+  \item 熟悉各种常用算法并能落地在日常工作中，包括且不限于利用前缀树优化国标编码路径存储，并查集解决多目录树连通性检查等问题。
+  \item 熟悉TCP/IP、HTTP、SIP等协议，有较为丰富的网络编程经验，实际工作中深入研究过netty以及reactor-netty响应式库源码，有基于netty和go手写sip客户端与服务端的经历。
+\end{itemize}
+
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{北京化工大学}, 北京}{2007 -- 2012}
+\textit{学士}\ 应用化学
+
+% \section{\faInfo\ 其他}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.5ex]
+%   \item 技术博客: http://blog.yours.me
+%   \item GitHub: https://github.com/username
+%   \item 语言: 英语 - 熟练(TOEFL xxx)
+% \end{itemize}
+
+\end{document}
