@@ -1,0 +1,107 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{张宗泰}
+
+\basicInfo{
+  \email{zzt.nbl@hotmail.com} \textperiodcentered\ 
+  \phone{(+86) 139-1860-2041} \textperiodcentered\ 
+  \github[firestige]{https://github.com/firestige}}
+
+\section{\faFileText\ 个人介绍}
+    本人长期从事\textbf{视频监控场景设备接入管理平台软件}开发和解决方案设计工作行业经验丰富。主要负责\textbf{设备接入}（如IPC，NVR等设备)，\textbf{平台对接}模块的设计开发工作。熟悉\textbf{ONVIF、GB28181、SIP、RTSP}等国内主流音视频相关协议，并有\textbf{高吞吐量协议网关}的开发和落地经验。
+
+\section{\faBriefcase\ 项目经历}
+
+\datedsubsection{\textbf{Pacific分布式存储系统·华为}}{2023年5月 -- 至今}
+\role{Java, Linux}{MDE，SE}
+\begin{onehalfspacing}
+承担场景化解决方案架构设计与看护，DFX改进，版本需求分析和RAT评审等。
+\begin{itemize}
+  \item 负责智能制造场景产品解决方案设计与孵化，\textbf{参与智造NA客户AI质检、园区综合管理解决方案搭建与整合}，支撑分布式数据存储系统和视频管理平台产品的植入工作。当前方案已落地\textbf{广东某半导体制造公司，重庆某车企}。
+  \item 负责系统架构看护。为解决团队成员对系统架构理解不清晰，提升系统架构把控度，推动团队接纳\textbf{4+1视图架构管控方案}。历时半年，组织培训12次，完成100万行代码的梳理和排查，最终输出UML架构设计资产超6000件，\textbf{培养具备架构设计能力骨干7名}。
+  \item 负责产品DFX改进工作。针对测试和维护团队反馈产品\textbf{可观测性差，问题定位成本高}的情况，完成全链路消息追踪设计和自动化崩溃信息收集改造。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{IVS分布式视频监控系统·华为}}{2020年12月 -- 2023年5月}
+\role{Java, Linux}{MDE}
+\begin{onehalfspacing}
+作为组内MDE负责\textbf{相机和平台接入与管理模块}的质量看护，核心功能设计和开发工作。组织代码评审，技术沙龙，配合主管完成技术梯队构建。
+\begin{itemize}
+  \item 主导完成常驻内存消减挑战。在JDK8的基础上，通过\textbf{优化字符串编码方式}，\textbf{创建私有常量池进行资源复用}，利用\textbf{弱引用实现自动回收}等措施，实现满规格下\textbf{老年代占用缩减50\%，提升信令吞吐量20\%}的目标，获得产品线十佳QCC改进荣誉。
+  \item 针对原有基于BIO的消息分发模型在大规格场景下吞吐量不足的问题，利用Reactor模型改造消息收发模块。利用\textbf{事件循环+业务线程池}的设计优化线程调度机制，充分发挥响应式编程在提升CPU利用率方面的优势，达成\textbf{线程使用减少60\%，业务接口响应延迟降低40\%}的目标，获得产品线十佳微重构荣誉并在内部作为优秀案例推广。特性上线后\textbf{0事故并显著提升设备、平台接入模块满负载下稳定性}，收到维护团队感谢。
+  \item 配合项目主管完成产品质量爬坡工作。针对责任模块在网问题频发的情况，主动分析根因并\textbf{产出TopN问题共性清单}。针对代码缺陷和内存溢出两类主要问题，一方面在组内\textbf{推行开发者测试}，完成单元测试废弃、迁移、新增用例约2000条，提升单元测试问题拦截效率；另一方面为测试团队\textbf{开发压力测试工具}，作为领域专家帮助测试人员设计压力测试场景9个，提前暴露高负载下潜在的内存溢出问题。负向改进动作执行到位后，连续两个主要商用版本未出现质量问题，达成攻坚目标，获得亮剑奖荣誉。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{机数大材库·机数}}{2018 年3月 -- 2020年11月}
+\role{Java, TS}{核心开发者}
+\begin{onehalfspacing}
+作为核心开发者负责数据挖掘模块与B/S应用设计和开发。
+\begin{itemize}
+  \item 负责自然语言处理程序开发，利用\textbf{朴素贝叶斯分类器、隐式马尔科夫模型}分析全球化学专利文档，挖掘其中的化学反应方程式，为大材库凑齐初始的100万个有机化学反应方程。
+  \item 负责搭建自动化生产流水线，并优化生产效率。基于\textbf{Redis}搭建化学命名同义词字典库，加速文档分析。成功在\textbf{3G内存空间中实现越10G语料的字典存储，压缩率70\%，并缩短分析时间约20\%}。同时利用\textbf{flink}搭建微批处理流水线，实现化学文档抓取，分析加工，落库自动化流程。
+  \item 带领团队完成机数大材库B/S应用设计和开发，指导团队成员基于Spring Cloud完成数据挖掘，清洗、落库与搜索展示等业务微服务化和上云部署工作。
+  \item 指导团队成员利用\textbf{react}、\textbf{three.js}、\textbf{D3.js}等工具定制开发前端3D分子显示组件，数据可视化组件等前端模组。
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{复杂难容物质溶解工艺改进·南京普迪科技实业有限公司}}{2013 年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+\begin{onehalfspacing}
+针对复杂难容物质溶解问题开发新的生产工艺。
+\begin{itemize}
+  \item 利用咪唑啉类有机小分子配合阴离子表面活性剂改进化学清洗缓蚀剂，对碳钢的氢离子缓蚀效果提升2\%，投药成本降低10\%。
+  \item 设计新施工工艺，加入水样自动监控和给药能力，引入新的密封和管路连接技术，减少综合施工人力成本50\%。
+\end{itemize}
+\end{onehalfspacing}
+
+\section{\faUsers\ 工作经历}
+\datedsubsection{\textbf{华为} 杭州}{2022年5月 -- 至今}
+\role{JAVA开发工程师}{职级：15}
+
+\datedsubsection{\textbf{德科·华为OD} 杭州}{2020年12月 -- 2022年5月}
+\role{JAVA开发工程师}{职级：D3}
+
+\datedsubsection{\textbf{合肥机数量子科技有限公司} 合肥}{2018年2月 -- 2020年11月}
+\role{JAVA开发工程师}{}
+
+\datedsubsection{\textbf{南京普迪科技实业有限公司} 南京}{2013年3月 -- 2017年1月}
+\role{工艺研发工程师}{}
+
+\section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 语言运用：Java（工作语言） > python = TypeScript > Go
+  \item 对spring、spring-webflux、spring-integrate、netty和Reactor等框架源码有深入研究和分析，熟悉事件驱动设计。
+  \item 熟悉各类单体设计模式和分布式系统架构模式，需求分析方法，有多个重构案例并有分布式存储项目架构设计和解决方案设计经验。
+  \item 长期从事性能优化工作，对CPU缓存机制和JVM有较深入了解。
+  \item 有丰富的疑难问题根因定位经验，尤其内存溢出、死锁等故障定位经验丰富。
+\end{itemize}
+
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{北京化工大学}, 北京}{2007 -- 2012}
+\textit{学士}\ 应用化学
+
+% \section{\faInfo\ 其他}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.5ex]
+%   \item 技术博客: http://blog.yours.me
+%   \item GitHub: https://github.com/username
+%   \item 语言: 英语 - 熟练(TOEFL xxx)
+% \end{itemize}
+
+\end{document}
